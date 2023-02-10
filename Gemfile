@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+gem 'mini_magick'
+gem 'file_validators'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
