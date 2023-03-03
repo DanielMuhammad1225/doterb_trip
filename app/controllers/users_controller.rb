@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @user = User.all
   end
 
   # GET /users/1 or /users/1.json
@@ -26,10 +26,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :show, status: :created, location: @users }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @users.errors, status: :unprocessable_entity }
       end
     end
   end

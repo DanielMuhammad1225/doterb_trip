@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @user.each do |user| %>
       <tr>
         <td><%= user.email %></td>
         <td><%= user.full_name %></td>
@@ -34,7 +34,16 @@
 <ul class="list-unstyled">
 
   <ul> 
-    <li class="fw-bold"><%= link_to 'New User', new_user_path %></li>
-  </ul>
 
 
+
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+</p>

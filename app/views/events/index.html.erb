@@ -1,9 +1,10 @@
+<div class="d-flex align-items-center justify-content-center">
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
-
-<table>
-  <thead>
+<h1 class="fw-bold">Events</h1>
+</div>
+<table class="table table-hover table-bordered border-dark table-striped">
+  <thead class="table-dark">
     <tr>
       <th>Name</th>
       <th>Start date</th>
@@ -13,7 +14,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @events.each do |event| %>
       <tr>
@@ -32,5 +33,5 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
-<%= link_to 'Attendance', attendances_path %>
+  
+<li><%= link_to 'New Event', new_event_path %></li>
