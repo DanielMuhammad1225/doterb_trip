@@ -3,6 +3,9 @@
 
 <h1 class="fw-bold">Users</h1>
 </div>
+
+<%= paginate @users %>
+
 <table class="table table-hover table-bordered border-dark table-striped">
   <thead class="table-dark">
     <tr>
@@ -37,4 +40,16 @@
     <li class="fw-bold"><%= link_to 'New User', new_user_path %></li>
   </ul>
 
+<%= paginate @users %>
+
+<p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+</p>
 
