@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= paginate @attendances %>
+
 <h1>Attendances</h1>
 
 <table>
@@ -27,6 +27,6 @@
 </table>
 
 <br>
-
+<%= paginate @attendances %>
 <%= link_to 'New Attendance', new_attendance_path %>
 <%= link_to 'Events', events_path %>
