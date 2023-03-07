@@ -1,0 +1,3 @@
+class EmailUser < ApplicationRecord
+    
+end

@@ -29,6 +29,8 @@ gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 gem 'mini_magick'
 gem 'file_validators'
 
+gem 'ransack'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

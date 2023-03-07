@@ -37,8 +37,6 @@
 <ul class="list-unstyled">
 
   <ul> 
-    <li class="fw-bold"><%= link_to 'New User', new_user_path %></li>
-  </ul>
 
 <%= paginate @users %>
 
@@ -52,4 +50,3 @@
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
 </p>
-
