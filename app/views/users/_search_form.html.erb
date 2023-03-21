@@ -1,0 +1,10 @@
+  <%= search_form_for @q, url: :users do |form| %>
+    <div class="form-group">
+      <%= form.label :email_cont %>
+      <%= form.search_field :email_cont %>
+    </div> 
+    <div>
+      <%= form.submit class: "btn btn-primary btn-lg"%>
+    </div>
+  <% end %>
+  

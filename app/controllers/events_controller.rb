@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
   # GET /events or /events.json
   def index
-    @events = Event.order(:name).page params[:page]
+    @q = Event.ransack(params[:q])
+    @events = @q.result.page params[:page]
   end
   # GET /events/1 or /events/1.json
   def show

@@ -1,0 +1,9 @@
+  <%= search_form_for @q, url: :events do |form| %>
+    <div class="form-group">
+      <%= form.label :event_name_cont %>
+      <%= form.search_field :name_cont  %>
+    </div> 
+    <div>
+      <%= form.submit class: "btn btn-primary btn-lg"%>
+    </div>
+  <% end %>
