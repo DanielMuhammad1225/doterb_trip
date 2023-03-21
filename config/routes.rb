@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :roles
   resources :email_users
   devise_for :users
   resources :users
