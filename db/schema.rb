@@ -51,12 +51,26 @@ ActiveRecord::Schema.define(version: 2023_03_17_072421) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "email_users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "login"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
     t.date "end_date"
     t.string "description"
     t.string "photo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.json "avatars"
+  end
+
+  create_table "homes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
