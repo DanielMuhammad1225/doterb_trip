@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.order(:full_name).page params[:page]
+    @q = User.ransack(params[:q])
+    @users = @q.result.page params[:page]
   end
 
   # GET /users/1 or /users/1.json

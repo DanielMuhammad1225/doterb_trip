@@ -3,7 +3,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.order(:user_id).page params[:page]
+    @q = Attendance.ransack(params[:q])
+    @attendances = @q.result.page params[:page]
   end
 
   # GET /attendances/1 or /attendances/1.json
